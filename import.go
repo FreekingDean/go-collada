@@ -287,8 +287,15 @@ type TechniqueCore struct {
 
 //TechniqueCommon specifies the information for a specific element for the common profile that all COLLADA implementations must support.
 type TechniqueCommon struct {
-	XML      string   `xml:",innerxml"`
-	Accessor Accessor `xml:"accessor,innerxml"`
+	XML              string            `xml:",innerxml"`
+	Accessor         *Accessor         `xml:"accessor"`
+	InstanceMaterial *InstanceMaterial `xml:"instance_material"`
+	Param            []*ParamCore      `xml:"param"`
+}
+
+type InstanceMaterial struct {
+	Symbol string `xml:"symbol,attr"`
+	Target string `xml:"target,attr"`
 }
 
 //ControlVertices describes the control vertices (CVs) of a spline.
