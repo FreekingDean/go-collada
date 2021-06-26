@@ -175,7 +175,9 @@ type VertexWeights struct {
 
 // Accessor declares an access pattern to one of the array elements <float_array>, <int_array>, <Name_array>, <bool_array>, and <IDREF_array>.
 type Accessor struct {
-	//TODO
+	HasCount
+	Stride int          `xml:"stride,attr"`
+	Param  []*ParamCore `xml:"param"`
 }
 
 // BoolArray declares the storage for a homogenous array of Boolean values.
@@ -224,7 +226,8 @@ type NameArray struct {
 
 // ParamCore declares parametric information for its parent element.
 type ParamCore struct {
-	//TODO
+	HasName
+	HasType
 }
 
 // SidRefArray declares the storage for a homogenous array of scoped-identifier reference values.
@@ -284,7 +287,8 @@ type TechniqueCore struct {
 
 //TechniqueCommon specifies the information for a specific element for the common profile that all COLLADA implementations must support.
 type TechniqueCommon struct {
-	XML string `xml:",innerxml"`
+	XML      string   `xml:",innerxml"`
+	Accessor Accessor `xml:"accessor,innerxml"`
 }
 
 //ControlVertices describes the control vertices (CVs) of a spline.
