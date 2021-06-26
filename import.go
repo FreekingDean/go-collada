@@ -133,7 +133,7 @@ type InstanceController struct {
 	HasSid
 	HasName
 	HasUrl
-	Skeleton     []*Skeleton    `xml:"skeleton"`
+	Skeleton     []*Skeleton   `xml:"skeleton"`
 	BindMaterial *BindMaterial `xml:"bind_material"`
 	HasExtra
 }
@@ -256,14 +256,14 @@ type Source struct {
 type InputShared struct {
 	Offset   uint   `xml:"offset,attr"`
 	Semantic string `xml:"semantic,attr"`
-	Source   Uri `xml:"source,attr"`
+	Source   Uri    `xml:"source,attr"`
 	Set      uint   `xml:"set,attr,omitempty"`
 }
 
 // InputUnshared declares the input semantics of a data source.
 type InputUnshared struct {
 	Semantic string `xml:"semantic,attr"`
-	Source   Uri `xml:"source,attr"`
+	Source   Uri    `xml:"source,attr"`
 }
 
 // Extra provides arbitrary additional information about or related to its parent element.
@@ -347,7 +347,7 @@ type Linestrips struct {
 //Mesh describes basic geometric meshes using vertex and primitive information.
 type Mesh struct {
 	Source     []*Source     `xml:"source"`
-	Vertices   Vertices     `xml:"vertices"`
+	Vertices   Vertices      `xml:"vertices"`
 	Lines      []*Lines      `xml:"lines"`
 	Linestrips []*Linestrips `xml:"linestrips"`
 	Polygons   []*Polygons   `xml:"polygons"`
@@ -373,7 +373,7 @@ type HasPhs struct {
 	Ph []*Ph `xml:"ph"`
 }
 type Ph struct {
-	P P   `xml:"p"`
+	P P    `xml:"p"`
 	H []*H `xml:"h"`
 }
 
@@ -513,15 +513,15 @@ type Unit struct {
 //Asset defines asset-management information regarding its parent element.
 type Asset struct {
 	Contributor []*Contributor `xml:"contributor"`
-	Coverage    *Coverage     `xml:"coverage"`
-	Created     string        `xml:"created"`
-	Keywords    string        `xml:"keywords,omitempty"`
-	Modified    string        `xml:"modified"`
-	Revision    string        `xml:"revision,omitempty"`
-	Subject     string        `xml:"subject,omitempty"`
-	Title       string        `xml:"title,omitempty"`
-	Unit        *Unit         `xml:"unit"`
-	UpAxis      UpAxis        `xml:"up_axis,omitempty"`
+	Coverage    *Coverage      `xml:"coverage"`
+	Created     string         `xml:"created"`
+	Keywords    string         `xml:"keywords,omitempty"`
+	Modified    string         `xml:"modified"`
+	Revision    string         `xml:"revision,omitempty"`
+	Subject     string         `xml:"subject,omitempty"`
+	Title       string         `xml:"title,omitempty"`
+	Unit        *Unit          `xml:"unit"`
+	UpAxis      UpAxis         `xml:"up_axis,omitempty"`
 }
 
 //COLLADA declares the root of the document that contains some of the content in the COLLADA schema.
@@ -551,7 +551,7 @@ type Collada struct {
 	// LibraryPhysicsScenes []*LibraryPhysicsScenes `xml:"library_physics_scenes"`
 	// LibraryPhysicsScenes []*LibraryPhysicsScenes `xml:"library_physics_scenes"`
 	LibraryVisualScenes []*LibraryVisualScenes `xml:"library_visual_scenes"`
-	Scene               *Scene                `xml:"scene"`
+	Scene               *Scene                 `xml:"scene"`
 	HasExtra
 }
 
@@ -632,7 +632,7 @@ type Node struct {
 
 //Scene embodies the entire set of information that can be visualized from the contents of a COLLADA resource.
 type Scene struct {
-	InstancePhysicsScene    []*InstancePhysicsScene   `xml:"instance_physics_scene"`
+	InstancePhysicsScene    []*InstancePhysicsScene  `xml:"instance_physics_scene"`
 	InstanceVisualScene     *InstanceVisualScene     `xml:"instance_visual_scene"`
 	InstanceKinematicsScene *InstanceKinematicsScene `xml:"instance_kinematics_scene"`
 	HasExtra
@@ -743,7 +743,7 @@ type TechniqueFx struct {
 	Blinn      *Blinn      `xml:"blinn"`
 	ConstantFx *ConstantFx `xml:"constant"`
 	Lambert    *Lambert    `xml:"lambert"`
-	Phone      *Phong      `xml:"phong"`
+	Phong      *Phong      `xml:"phong"`
 	Pass       *Pass       `xml:"pass"`
 	HasExtra
 }
@@ -1076,29 +1076,29 @@ type TexturePipeline struct {
 }
 
 type P struct {
-    Ints
+	Ints
 }
 
 type Floats struct {
-    Values
+	Values
 }
 type Bools struct {
-    Values
+	Values
 }
 type IdRefs struct {
-    Values
+	Values
 }
 type Ints struct {
-    Values
+	Values
 }
 type Names struct {
-    Values
+	Values
 }
 type SidRefs struct {
-    Values
+	Values
 }
 type Tokens struct {
-    Values
+	Values
 }
 
 type Values struct {
@@ -1106,16 +1106,16 @@ type Values struct {
 }
 
 type Float3x3 struct {
-    Floats
+	Floats
 }
 type Float4x4 struct {
-    Floats
+	Floats
 }
 type Float4 struct {
-    Floats
+	Floats
 }
 type Float3 struct {
-    Floats
+	Floats
 }
 
 type Float struct {
