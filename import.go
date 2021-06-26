@@ -177,7 +177,7 @@ type VertexWeights struct {
 type Accessor struct {
 	HasCount
 	Stride int          `xml:"stride,attr"`
-	Param  []*ParamCore `xml:"param"`
+	Params []*ParamCore `xml:"param"`
 }
 
 // BoolArray declares the storage for a homogenous array of Boolean values.
@@ -290,7 +290,6 @@ type TechniqueCommon struct {
 	XML              string            `xml:",innerxml"`
 	Accessor         *Accessor         `xml:"accessor"`
 	InstanceMaterial *InstanceMaterial `xml:"instance_material"`
-	Param            []*ParamCore      `xml:"param"`
 }
 
 type InstanceMaterial struct {
